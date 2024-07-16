@@ -112,19 +112,33 @@ int main() {
     print_distance();
     printf("\r\n");
     
-    while(1) {
+     while(1) {
         if (data_ready) {
             data_ready = false;
-        
-            if (recv_char == 'r') {
-                printf("\n\r--- Reading sensor values ---\n\r");
-                print_t_rh();
-                print_mag();
-                print_accel();
-                print_gyro();
-                print_distance();
-                printf("\r\n");
+
+            // Defined key actions character
+            switch (recv_char) {
+                case 'q':
+                    print_accel();
+                    break;
+                case 'w':
+                    print_gyro();
+                    break;
+                case 'e':
+                    print_mag();
+                    break;
+                case 'r':
+                    print_t_rh();
+                    break;
+                case 't':
+                    print_distance();
+                    break;  
+                default:
+                // If undefined key is pressed print
+                    printf("Undefined Key Pressed\r\n");
+                    break;
             }
         }
-        wait_us(500000);}
+        wait_us(500000);
+    }
 }
