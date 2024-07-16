@@ -32,27 +32,27 @@ void print_t_rh(){
 void print_mag(){
     int32_t axes[3];
     magnetometer.get_m_axes(axes);
-    printf("LIS3MDL [mag/mgauss]:    %6ld, %6ld, %6ld\r\n", axes[0], axes[1], axes[2]);
+    printf("LIS3MDL [mag/mgauss]:    %6d, %6d, %6d\r\n", axes[0], axes[1], axes[2]);
 
 }
 
 void print_accel(){
     int32_t axes[3];
     acc_gyro.get_x_axes(axes);
-    printf("LSM6DSL [acc/mg]:        %6ld, %6ld, %6ld\r\n", axes[0], axes[1], axes[2]);
+    printf("LSM6DSL [acc/mg]:        %6d, %6d, %6d\r\n", axes[0], axes[1], axes[2]);
 }
 
 void print_gyro(){
     int32_t axes[3];
     acc_gyro.get_g_axes(axes);
-    printf("LSM6DSL [gyro/mdps]:     %6ld, %6ld, %6ld\r\n", axes[0], axes[1], axes[2]);
+    printf("LSM6DSL [gyro/mdps]:     %6d, %6d, %6d\r\n", axes[0], axes[1], axes[2]);
 }
 
 void print_distance(){
     uint32_t distance;
     int status = range.get_distance(&distance);
     if (status == VL53L0X_ERROR_NONE) {
-        printf("VL53L0X [mm]:            %6ld\r\n", distance);
+        printf("VL53L0X [mm]:            %6d\r\n", distance);
     } else {
         printf("VL53L0X [mm]:                --\r\n");
     }
