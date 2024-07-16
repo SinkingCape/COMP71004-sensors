@@ -126,5 +126,5 @@ int main() {
                 printf("\r\n");
             }
         }
-        wait_us(300000);}
+        wait_us(500000);}
 }
